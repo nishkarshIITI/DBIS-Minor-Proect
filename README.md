@@ -1,1 +1,1 @@
-# DBIS-Minor-Proect
+# DBIS-Minor-Project
