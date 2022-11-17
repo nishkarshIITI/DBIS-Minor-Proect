@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>University X : Student</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">  
+</head>
+<body style="background-color:#696969;">
+    <nav class="navbar navbar-light navbar-expand-sm fixed-top" >
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" mb-0 h1>
+    <img src="logo.jpg" width="30" height="30" alt="">
+  University X : Student</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="/updatepersonaldetails">Update Personal Details</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/viewgradesheet">View Grade Sheet</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/changepassword">Change Password</a></li>
+                        <li class="nav-item"><form action="/logout" method = "POST"> <button type = "submit"> LogOut</button> </form></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <h2 style="color:#FFFFFF"> Grade Sheet</h2>
+    <h3 style="color:#FFFFFF"> <%= user.Name %> </h3>
+    <h3 style="color:#FFFFFF"> <%= user.ID %> </h3>
+  <table class="table" style="background-color:black;color: #FFFFFF;">
+  <thead>
+    <tr>
+      <th scope="col">S_No.</th>
+      <th scope="col">Credits</th>
+      <th scope="col">course id</th>
+      <th scope="col">course name</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < result.length; i++) { %>
+    <tr>
+      <th scope="row"><%= i+1 %></th>
+      <td><%= result[i].credits %></td>
+      <td><%= result[i].course_id %></td>
+      <td><%= result[i].Name %></td>
+      <td><%= result[i].grade %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>University X : Admin</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">  
+</head>
+<body>
+	<header>
+  <nav class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" mb-0 h1>
+    <img src="logo.jpg" width="30" height="30" alt="">
+  University X : Admin</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                         <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item col-3"><a class="nav-link" href="/make_admin">Make Admin</a></li>
+                        <li class="nav-item col-3"><a class="nav-link" href="/create_id">Create ID</a></li>
+                        <li class="nav-item col-3"><a class="nav-link" href="/delete_id">Delete ID</a></li>
+                        <li class="nav-item col-2"><a class="nav-link" href="/viewtables">View</a></li>
+                        
+                        <li class="nav-item"><form action="/logout" method = "POST"> <button type = "submit"> LogOut</button> </form></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <table class="table" style="background-color:#191253;color: #FFFFFF;">
+  <thead>
+    <tr>
+      <th scope="col">S_No.</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">password</th>
+      <th scope="col">usertype</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < result.length; i++) { %>
+      <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= result[i].ID %></td>
+        <td><%= result[i].Name %></td>
+        <td><%= result[i].password %></td>
+        <td><%= result[i].usertype %></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+<form class="container-fluid">
+  <div class="form-group">
+    <label for="exampleinputprimarykey">ID</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+    <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+  </div>
+  <div class="form-group">
+    <label for="ex">Enter attribute</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="attribute">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter Value</label>
+    <input type="text" class="form-control" id="exampleInputPassword" placeholder="value">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-- <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script> -->
+</body>
+</html>

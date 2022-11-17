@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>University X : Student</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">  
+</head>
+<body>
+  <nav class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" mb-0 h1>
+    <img src="logo.jpg" width="30" height="30" alt="">
+  University X : Faculty</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="/updatefacultydetails">Update Personal Details</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/assigngrade">Assign Grade</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/changepassword">Change Password</a></li>
+                        <li class="nav-item"><form action="/logout" method = "POST"> <button type = "submit"> LogOut</button> </form></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- create table faculty(ID int not null,Name varchar(255),Specialization varchar(255),Department varchar(255),Role varchar(255),Courses int,Salary int not null,primary key(ID),foreign key(Department) references Department(Department_Name));
+ -->
+    <section class="h-100 h-custom gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <form action = "/updatefacultydetails" method = "POST">
+              <div class="col-lg-6">
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline">
+                      <input type="text" id="form3Examplev4" class="form-control form-control-lg" name = "Department"/>
+                      <label class="form-label" for="form3Examplev4">Department</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+
+                      <div class="form-outline">
+                        <input type="text" id="form3Examplev5" class="form-control form-control-lg" name = "Specialization"/>
+                        <label class="form-label" for="form3Examplev5">Specialization</label>
+                      </div>
+
+                    </div>
+                    <div class="col-md-5 mb-3 pb-1">
+
+                      <div class="form-outline">
+                        <input type="Number" id="form3Examplev2" class="form-control form-control-lg" name = "Courses"/>
+                        <label class="form-label" for="form3Examplev2">Courses</label>
+                      </div>
+
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+
+                      <div class="form-outline">
+                        <input type="Number" id="form3Examplev3" class="form-control form-control-lg" name = "Salary"/>
+                        <label class="form-label" for="form3Examplev3">Salary</label>
+                      </div>
+
+                    </div>
+                    <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <input type="text" id="form3Examplea3" class="form-control form-control-lg" name = "Role"/>
+                      <label class="form-label" for="form3Examplea3">Role</label>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+                  <button type="submit" class="btn btn-light btn-lg"
+                    data-mdb-ripple-color="dark">Register</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
