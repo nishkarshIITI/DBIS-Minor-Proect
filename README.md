@@ -1,2 +1,2 @@
 # DBIS-Minor-Project
-testing
+Implements basic University Database Management system 
